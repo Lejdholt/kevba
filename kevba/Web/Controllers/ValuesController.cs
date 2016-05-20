@@ -9,18 +9,26 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly IExampleClass exampleClass;
+
+
         // GET api/values
+        public ValuesController(IExampleClass exampleClass)
+        {
+            this.exampleClass = exampleClass;
+        }
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { exampleClass.DoShit() + "1", exampleClass.DoShit() + "2" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return exampleClass.DoShit() + id;
         }
 
         // POST api/values

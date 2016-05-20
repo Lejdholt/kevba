@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net.Http;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Web.Services
+namespace Web
 {
-    public class DezMovi_eLizereService
+    public class Service
     {
         public async void motherfucker()
         {

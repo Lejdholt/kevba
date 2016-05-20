@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using System.Web.Http;
 using Newtonsoft.Json;
-using Web.Services;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace Web.API
+namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    public class MovieController : Controller
+    public class MoviesController : ApiController
     {
-
         [Route("amovie")]
         [HttpGet]
         private async Task<Result> GetExternalResponse()
@@ -24,7 +21,7 @@ namespace Web.API
             {
                 result = await client.GetStringAsync("https://api.themoviedb.org/3/movie/55?api_key=ef790bbc30e5be2b19e777aef1d8c488");
             }
-           return JsonConvert.DeserializeObject<Result>(result);
+            return JsonConvert.DeserializeObject<Result>(result);
         }
     }
 }

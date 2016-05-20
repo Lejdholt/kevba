@@ -1,13 +1,14 @@
+using Web;
 using Xunit;
 
-namespace Web.Services
+namespace Tests
 {
     public class MyClass
     {
         [Fact]
         public void lolz()
         {
-            var lol = new DezMovi_eLizereService();
+            var lol = new Service();
             lol.motherfucker();
         }
     }

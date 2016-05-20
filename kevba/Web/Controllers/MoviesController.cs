@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Newtonsoft.Json;
 
 namespace Web.Controllers
 {
-    [Route("api/[controller]")]
+    [RoutePrefix("api/[controller]")]
     public class MoviesController : ApiController
     {
         [Route("amovie")]

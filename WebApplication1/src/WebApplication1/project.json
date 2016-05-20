@@ -8,25 +8,25 @@
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final",
-    "Ninject": "3.2.2"
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final"
   },
+
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
       "version": "1.0.0-preview1-final",
       "imports": "portable-net45+win8+dnxcore50"
     }
   },
+
   "frameworks": {
-    "net46": { }   
+    "net46": { }
   },
+
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
   },
-  "runtimeOptions": {
-    "gcServer": true
-  },
+
   "publishOptions": {
     "include": [
       "wwwroot",

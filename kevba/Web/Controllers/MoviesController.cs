@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Web.Controllers
 {
-    [RoutePrefix("api/[controller]")]
+    [RoutePrefix("api/movies")]
     public class MoviesController : ApiController
     {
-        [Route("amovie")]
+        [Route("test")]
         [HttpGet]
-        private async Task<Result> GetExternalResponse()
+        public async Task<Result> Get()
         {
             string result;
             using (var client = new HttpClient())

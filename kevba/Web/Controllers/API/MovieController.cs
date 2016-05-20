@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Web.Services;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,24 +15,16 @@ namespace Web.API
     public class MovieController : Controller
     {
 
-        static string _address = "http://api.themoviedb.org/3/";
-        private string result;
-
-        // GET api/values
-        public async Task<IEnumerable<string>> Get()
+        [Route("amovie")]
+        [HttpGet]
+        private async Task<Result> GetExternalResponse()
         {
-            var result = await GetExternalResponse();
-
-            return new string[] { result, "value2" };
-        }
-
-        private async Task<string> GetExternalResponse()
-        {
-            var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(_address);
-            response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadAsStringAsync();
-            return result;
+            string result;
+            using (var client = new HttpClient())
+            {
+                result = await client.GetStringAsync("https://api.themoviedb.org/3/movie/55?api_key=ef790bbc30e5be2b19e777aef1d8c488");
+            }
+           return JsonConvert.DeserializeObject<Result>(result);
         }
     }
 }

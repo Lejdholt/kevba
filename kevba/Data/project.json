@@ -1,8 +1,10 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
-    "NETStandard.Library": "1.5.0-rc2-24027"
+    "Neo4j.Driver": "1.0.0",
+    "NETStandard.Library": "1.5.0-rc2-24027",
+    "xunit": "2.1.0"
   },
 
   "frameworks": {

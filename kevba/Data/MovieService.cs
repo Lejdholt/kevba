@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Neo4j.Driver.V1;
 
@@ -14,7 +15,7 @@ namespace Data
 
         public void AddMovies(IEnumerable<Movie> movies)
         {
-            using (var driver = GraphDatabase.Driver("bolt://localhost:7474/", AuthTokens.Basic("neo4j", "qqj4ab")))
+            using (var driver = GraphDatabase.Driver("bolt://localhost/", AuthTokens.Basic("neo4j", "qqj4ab")))
             using (var session = driver.Session())
             {
                 foreach (var movie in movies)
@@ -37,6 +38,12 @@ namespace Data
                     }
                 }
             }
+        }
+
+
+        public ActorConnection GetConnection(string actorFrom, string actorTo)
+        {
+            throw new NotImplementedException();
         }
     }
 }

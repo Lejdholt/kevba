@@ -1,4 +1,5 @@
 using Web;
+using Web.Controllers;
 using Xunit;
 
 namespace Tests
@@ -6,10 +7,10 @@ namespace Tests
     public class MyClass
     {
         [Fact]
-        public void lolz()
+        public async void lolz()
         {
-            var lol = new Service();
-            lol.motherfucker();
+            var lol = new MoviesController();
+       var list =     await lol.Get();
         }
     }
 }

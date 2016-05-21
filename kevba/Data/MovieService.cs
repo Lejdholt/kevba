@@ -169,7 +169,11 @@ namespace Data
             using (var driver = GraphDatabase.Driver("bolt://localhost/", AuthTokens.Basic("neo4j", "qqj4ab")))
             using (var session = driver.Session())
             {
-                IRecord result = session.Run($"MATCH p=shortestPath( (from:Person {{name:\"{actorFrom}\"}})-[*]-(to:Person {{name:\"{actorTo}\"}}) ) RETURN p").Single();
+                IRecord result = session.Run($"MATCH p=shortestPath( (from:Person {{name:\"{actorFrom}\"}})-[*]-(to:Person {{name:\"{actorTo}\"}}) ) RETURN p").SingleOrDefault();
+                if (result == null)
+                {
+                    return null;
+                }
                 var path = result["p"] as IPath;
                 IReadOnlyList<INode> readOnlyList = path.Nodes;
                 return CreateActorConnection(readOnlyList);

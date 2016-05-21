@@ -4,6 +4,6 @@ namespace Data
     {
         public string MovieTitle { get; set; }
         public string ImageUrl { get; set; }
-        public ActorConnection Movie { get; set; }
+        public ActorConnection Actor { get; set; }
     }
 }

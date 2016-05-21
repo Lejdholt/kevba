@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.Policy;
 using Data;
+using FluentAssertions;
+using Newtonsoft.Json;
 using Xunit;
 
 namespace Tests
@@ -8,10 +12,39 @@ namespace Tests
     public class Test
     {
         [Fact]
+        public void TestCLearGrejen()
+        {
+            "123'Apor?".ClearShit().Should().Be("OneHundredTwentyThreeApor");
+        }
+
+        [Fact]
+        public void TestCLearGreje4n()
+        {
+            "Apor12".ClearShit().Should().Be("Apor12");
+        }
+        [Fact]
+        public void TestCLearGreje9n()
+        {
+            "Ap12or".ClearShit().Should().Be("Ap12or");
+        }
+
+        [Fact]
         public void GetConnectionTest()
         {
             var sut = new MovieService();
             var connections = sut.GetConnection("Arnold Schwarzenegger", "Linda Hamilton");
+        }
+
+        [Fact]
+        public void InsertAllDataTest()
+        {
+            var sut = new MovieService();
+
+            var dataFile = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase, "data.json");
+
+            var movies = JsonConvert.DeserializeObject<IEnumerable<Movie>>(File.ReadAllText(dataFile));
+
+            sut.AddMovies(movies);
         }
 
         [Fact]

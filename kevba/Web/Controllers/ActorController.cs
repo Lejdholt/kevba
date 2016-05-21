@@ -3,11 +3,12 @@ using Data;
 
 namespace Web.Controllers
 {
-    [Route("api/[controller]")]
+    [RoutePrefix("api/actor")]
     public class ActorController : ApiController
     {
         [HttpGet]
-        public ActorConnection GetConnection(string from, string to)
+        [Route("connect/{from}/{to}")]
+        public ActorConnection Get(string from,string to)
         {
             var service = new MovieService();
 

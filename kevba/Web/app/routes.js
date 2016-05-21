@@ -10,7 +10,7 @@
                     url: "/",
                     views: {
                         'main': {
-                            templateUrl: "partials/movie.html",
+                            templateUrl: "app/partials/movie.html",
                             controller: "movieController",
                             controllerAs: 'vm'
                         }

@@ -3,29 +3,16 @@
 <head>
     <title>KevBa</title>
 	<meta charset="utf-8" />
-   
+
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="app/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                </button>
-                <a ui-sref="home" style="color: white;" class="navbar-brand">KevBa</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a ui-sref="home">Home</a></li>
-                </ul>
 
-            </div>
-        </div>
-    </div>
+    <section class="container col-lg-12" style="margin-top:40px;" ui-view="main"></section>
 
-    <section class="container col-lg-12" style="background-color: #eee;" ui-view="main"></section>
-
+    <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
     <script src="Scripts/bootstrap.js"></script>

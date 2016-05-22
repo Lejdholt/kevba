@@ -7,10 +7,25 @@
     background: url(images/bacon.png) top center no-repeat;
 }
 
-.heart-container {
-    vertical-align: middle;
+.image {
+    height: 250px; 
+}
+
+.directive {
+    text-align: center;
+    height: 400px;
+    width: 300px;
+    border: 1px solid #B7AEAE;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 20px;
     display: inline-block;
-    margin-left: 100px;
+}
+
+.heart-container {
+    display: inline-block;
+    width: 15.5vw;
+    text-align: center;
     margin-top: 15px;
 }
 
@@ -23,12 +38,14 @@
 .input-field {
     border-radius: 10px;
     height: 100px;
-    width: 670px;
+    width: 40vw;
     font-size: 30px;
     border: 1px solid #B7AEAE;
     text-align: center;
 }
 
 .result-container {
-
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }

@@ -109,7 +109,11 @@
     <Content Include="app\app.js" />
     <Content Include="app\images\bacon.png" />
     <Content Include="app\images\baconheart.png" />
+    <Content Include="app\movie\actor-directive.js" />
+    <Content Include="app\movie\movieDirective.html" />
+    <Content Include="app\movie\actorDirective.html" />
     <Content Include="app\movie\movie-controller.js" />
+    <Content Include="app\movie\movie-directive.js" />
     <Content Include="app\partials\movie.html" />
     <Content Include="app\routes.js" />
     <Content Include="app\site.css" />
@@ -120,6 +124,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -132,6 +138,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -182,7 +189,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50716</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1337/</IISUrl>
+          <IISUrl>http://localhost:1338/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

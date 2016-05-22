@@ -11,7 +11,7 @@
         vm.isFetching = false;
         vm.firstActor = '';
         vm.secondActor = '';
-        vm.results = [];
+        vm.results = null;
 
         vm.canFetch = function () {
             if(vm.isFetching) {
@@ -30,14 +30,13 @@
             if(!vm.canFetch()) {
                 return;
             }
-            vm.results = [];
+
+            vm.results = null;
             vm.isFetching = true;
 
             $http.get('/api/actor/connect/' + vm.firstActor + '/' + vm.secondActor)
                 .success(function (data) {
-                    angular.forEach(data, function (item) {
-                        vm.results.push(item);
-                    })
+                    vm.results = data;
                 })
                 .error(function (status) {
                     console.log(status);
